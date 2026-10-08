@@ -4,7 +4,7 @@ Paste a vague customer brief. Get goals, assumptions, open questions, phased sco
 
 ![MIT licence](https://img.shields.io/badge/licence-MIT-5146df) ![Next.js](https://img.shields.io/badge/Next.js-16-20212c) ![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6)
 
-**[Live demo — add your Vercel URL](#how-to-run)** · Built by [Steve Grady](https://github.com/ZeroCool0388) · [LinkedIn URL]
+**[Live demo](https://scopeforge-sable.vercel.app/)** · [GitHub](https://github.com/ZeroCool0388/03-brief-to-scope-agent) · Built by [Steve Grady](https://github.com/ZeroCool0388) · [LinkedIn URL]
 
 ![ScopeForge intake](docs/intake.jpg)
 
@@ -61,9 +61,9 @@ npx playwright install chromium
 npm run test:e2e
 ```
 
-**Vercel:** import this repository, keep the detected Next.js preset and default build settings, and deploy. No database or additional Vercel configuration is required. The data files are included through Next.js output tracing. Leave API keys unset for a public portfolio deployment. Add your preview URL to the Live demo link after deployment.
+**Vercel:** the public demo is deployed at [scopeforge-sable.vercel.app](https://scopeforge-sable.vercel.app/) and connected to this repository's `main` branch. Pushes to `main` deploy production updates automatically. The project uses the detected Next.js preset and default build settings. No database or additional Vercel configuration is required. The data files are included through Next.js output tracing. API keys are unset so the public portfolio runs in demo mode.
 
-The project is configured for Vercel; an authenticated preview deployment still needs to be verified. Local verification is recorded in [docs/VERIFICATION.md](docs/VERIFICATION.md).
+For your own deployment, import the repository into Vercel and use the detected defaults. Local and public-deployment verification is recorded in [docs/VERIFICATION.md](docs/VERIFICATION.md).
 
 ## Demo mode vs live mode
 

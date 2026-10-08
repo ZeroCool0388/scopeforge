@@ -47,11 +47,26 @@ Above-the-fold copy review: product name, navigation, primary CTA and headline r
 
 The final review found no remaining material visual defect against the written brief and extracted design system. Fixes included headline spacing, small-screen navigation, muted-text contrast, semantic heading order and PDF text spacing. The implemented workflow was verified through visible in-app-browser controls and the required automated browser tests.
 
+## Public deployment
+
+Deployed on 8 October 2026 using the existing authenticated Vercel session in Chrome.
+
+- Public demo: [scopeforge-sable.vercel.app](https://scopeforge-sable.vercel.app/).
+- Vercel project: [zero-cool0388/scopeforge](https://vercel.com/zero-cool0388/scopeforge).
+- Public repository: [ZeroCool0388/03-brief-to-scope-agent](https://github.com/ZeroCool0388/03-brief-to-scope-agent), with `main` as the connected production branch.
+- Vercel used the detected Next.js preset, repository root and default build settings; no provider keys were added.
+- The initial deployment of `76dbb29` reached **Ready**. GitHub's quality workflow passed the install, build, lint, type, unit and browser checks.
+- Anonymous HTTP access to the production home page returned **200**, with no Vercel sign-in required.
+- All four samples returned their validated demo fixtures through the hosted API. A pasted brief returned a clearly labelled heuristic draft. Section refresh and server PDF routes returned **200**.
+- Chrome verification covered staged generation, inline question editing, live preview changes and section refresh preserving the question edit. The PDF downloaded by the public-site button contains that edited question, remains one page, and has Steve Grady attribution and the synthetic-data footer.
+- [deployed-workspace.jpg](deployed-workspace.jpg) records the hosted workspace. Browser automation's download-event notification timed out, but the completed Chrome download was verified directly from the resulting file.
+- The README/link update is pushed through the connected repository to verify automatic production deployment. Vercel's commit status records its outcome on GitHub.
+
+The GitHub app remains restricted to selected repositories. ScopeForge was added to the existing selection after the user's approval; the two previously connected repositories were preserved.
+
 ## Remaining external verification
 
 - **OpenAI and Anthropic live requests:** implemented and tested with mocked adapters, but authenticated requests have not run because neither provider key is available. Verify both providers with a sample and pasted brief, including section refresh.
-- **Vercel deployment:** the Next.js app, server routes and traced data are ready for import with default settings. An authenticated preview deployment has not been created or verified here.
-- **Public GitHub publication:** local Git history is authored as Steve Grady. The project has no remote; repository publication has not been performed.
 - **Demo recording:** README retains the requested `docs/demo.gif` placeholder and includes a 60–90 second script.
 
 These pending checks are not counted as passed acceptance criteria. Local demo mode is complete and works without environment files.
