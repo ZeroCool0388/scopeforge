@@ -4,7 +4,7 @@ Paste a vague customer brief. Get goals, assumptions, open questions, phased sco
 
 ![MIT licence](https://img.shields.io/badge/licence-MIT-5146df) ![Next.js](https://img.shields.io/badge/Next.js-16-20212c) ![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6)
 
-**[Live demo](https://scopeforge-sable.vercel.app/)** · [GitHub](https://github.com/ZeroCool0388/03-brief-to-scope-agent) · Built by [Steve Grady](https://github.com/ZeroCool0388) · [LinkedIn URL]
+**[Live demo](https://scopeforge-sable.vercel.app/)** · [GitHub](https://github.com/ZeroCool0388/scopeforge) · Built by [Steve Grady](https://github.com/ZeroCool0388) · [LinkedIn](https://www.linkedin.com/in/steve-jg)
 
 ![ScopeForge intake](docs/intake.jpg)
 
@@ -43,13 +43,15 @@ No API key is needed. The FinTech brief is preloaded. All numbers and targets ar
 
 ## How to run
 
+The dev server runs at **[http://127.0.0.1:3033](http://127.0.0.1:3033)**.
+
 Node **20.9+** and npm are required.
 
 ```sh
 npm install && npm run dev
 ```
 
-Open [127.0.0.1:3033](http://127.0.0.1:3033). A fresh clone runs in demo mode with no `.env`.
+A fresh clone runs in demo mode with no `.env`.
 
 ```sh
 npm run build
@@ -63,7 +65,7 @@ npm run test:e2e
 
 **Vercel:** the public demo is deployed at [scopeforge-sable.vercel.app](https://scopeforge-sable.vercel.app/) and connected to this repository's `main` branch. Pushes to `main` deploy production updates automatically. The project uses the detected Next.js preset and default build settings. No database or additional Vercel configuration is required. The data files are included through Next.js output tracing. API keys are unset so the public portfolio runs in demo mode.
 
-For your own deployment, import the repository into Vercel and use the detected defaults. Local and public-deployment verification is recorded in [docs/VERIFICATION.md](docs/VERIFICATION.md).
+For your own deployment, import the repository into Vercel and use the detected defaults.
 
 ## Demo mode vs live mode
 
