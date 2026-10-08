@@ -1,0 +1,178 @@
+{
+  "title": "Medical information drafts with an evidence trail",
+  "summary": "A controlled assistant that drafts responses from approved materials for medical-information specialists to review.",
+  "customer": "Helix Pharma UK Ltd",
+  "sector": "Pharmaceuticals",
+  "goals": [
+    "Reduce specialist time spent assembling routine response drafts.",
+    "Keep every factual claim linked to current approved content.",
+    "Demonstrate a safe workflow for escalation and human approval."
+  ],
+  "inScope": [
+    "One agreed product/topic set using a versioned approved-content snapshot.",
+    "Draft replies with citations and explicit insufficient-evidence handling.",
+    "A reviewer queue using synthetic or approved de-identified queries.",
+    "A specialist-led evaluation of accuracy, coverage and escalation."
+  ],
+  "outOfScope": [
+    "Direct replies to HCPs or autonomous medical advice.",
+    "New scientific claims or content approval by the assistant.",
+    "Production mailbox integration and pharmacovigilance automation.",
+    "Full product-portfolio coverage or external publication."
+  ],
+  "assumptions": [
+    {
+      "text": "The medical-information owner can supply current approved documents.",
+      "confidence": "Low"
+    },
+    {
+      "text": "Specialists will review every draft before any use.",
+      "confidence": "High"
+    },
+    {
+      "text": "A limited-topic pilot can be evaluated without live mailbox access.",
+      "confidence": "Medium"
+    }
+  ],
+  "questions": [
+    {
+      "group": "Commercial",
+      "question": "Which topic generates enough repeat demand to justify a pilot?",
+      "why": "Concentrates the pilot on a credible value case."
+    },
+    {
+      "group": "Technical",
+      "question": "How are approved content versions and expiry dates represented?",
+      "why": "Prevents superseded documents entering a response."
+    },
+    {
+      "group": "Operational",
+      "question": "What is the existing adverse-event and off-label escalation procedure?",
+      "why": "The assistant must defer to an established specialist workflow."
+    },
+    {
+      "group": "Compliance",
+      "question": "Who approves intended use, evidence handling and pilot evaluation?",
+      "why": "Makes the compliance gate explicit before any build."
+    }
+  ],
+  "phases": [
+    {
+      "name": "Discover",
+      "objective": "Define the topic boundary, approved-content snapshot and compliance gate.",
+      "activities": [
+        "Interview the sponsor and nominated pilot users.",
+        "Profile approved sample data and identify access gaps.",
+        "Agree baseline measures, acceptance thresholds and a go/no-go gate."
+      ],
+      "exitCriteria": "Sponsor signs off the pilot boundary, data access and evaluation plan.",
+      "duration": {
+        "min": 1,
+        "max": 2
+      }
+    },
+    {
+      "name": "Design",
+      "objective": "Turn agreed outcomes and controls into a buildable pilot design.",
+      "activities": [
+        "Map the bounded workflow and reviewer responsibilities.",
+        "Define interfaces, failure handling and evidence requirements.",
+        "Review the design with the operational and compliance owners."
+      ],
+      "exitCriteria": "Design and required control owners approve the implementation plan.",
+      "duration": {
+        "min": 1,
+        "max": 2
+      }
+    },
+    {
+      "name": "Build",
+      "objective": "Implement evidence-linked drafting, abstention and specialist review.",
+      "activities": [
+        "Implement only the agreed data inputs and workflow.",
+        "Add traceability, access controls and explicit failure states.",
+        "Evaluate representative and adversarial cases against the reference set."
+      ],
+      "exitCriteria": "The test cohort meets agreed quality thresholds; critical issues are resolved.",
+      "duration": {
+        "min": 2,
+        "max": 4
+      }
+    },
+    {
+      "name": "Pilot",
+      "objective": "Evaluate usefulness and reliability with the agreed user cohort.",
+      "activities": [
+        "Onboard pilot users and train reviewers.",
+        "Run a bounded trial against the baseline.",
+        "Capture errors, review effort and user feedback."
+      ],
+      "exitCriteria": "Sponsor reviews measured results and decides to stop, iterate or expand.",
+      "duration": {
+        "min": 2,
+        "max": 3
+      }
+    },
+    {
+      "name": "Handover",
+      "objective": "Give the owner a controlled, maintainable next step.",
+      "activities": [
+        "Document the workflow, limits and operational runbook.",
+        "Transfer configuration and review responsibilities.",
+        "Present the pilot findings and a separately scoped rollout option."
+      ],
+      "exitCriteria": "Named owner accepts the handover and the next-step decision is recorded.",
+      "duration": {
+        "min": 1,
+        "max": 1
+      }
+    }
+  ],
+  "effort": {
+    "size": "Medium",
+    "drivers": [
+      {
+        "id": "data-readiness",
+        "detail": "Content currency, version metadata and topic coverage need checking."
+      },
+      {
+        "id": "compliance",
+        "detail": "Medical-information review and controlled intended-use approval."
+      },
+      {
+        "id": "human-review",
+        "detail": "All response drafts require specialist review."
+      }
+    ],
+    "min": 10,
+    "max": 19
+  },
+  "risks": [
+    {
+      "risk": "Unsupported claims appear in otherwise plausible drafts.",
+      "mitigation": "Require claim-level evidence and abstention; score unsupported claims separately."
+    },
+    {
+      "risk": "Expired content is retrieved.",
+      "mitigation": "Only index an approved versioned snapshot; exclude expired materials."
+    },
+    {
+      "risk": "Urgency erodes the review gate.",
+      "mitigation": "Agree a limited shadow pilot; do not connect a live sending channel."
+    }
+  ],
+  "metrics": [
+    {
+      "metric": "Unsupported claims",
+      "target": "Proposed: zero unsupported factual claims in the agreed evaluation set."
+    },
+    {
+      "metric": "Draft preparation time",
+      "target": "Proposed: 30% reduction against a specialist baseline."
+    },
+    {
+      "metric": "Escalation handling",
+      "target": "Proposed: 100% of seeded escalation cases routed for manual review."
+    }
+  ]
+}

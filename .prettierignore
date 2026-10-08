@@ -1,0 +1,7 @@
+.next
+node_modules
+package-lock.json
+03-brief-to-scope-agent.md
+test-results
+playwright-report
+next-env.d.ts

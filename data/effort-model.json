@@ -1,0 +1,11 @@
+{
+  "base": { "Small": [3, 5], "Medium": [6, 10], "Large": [12, 20] },
+  "drivers": {
+    "integrations": [2, 4],
+    "data-readiness": [1, 3],
+    "sso": [1, 2],
+    "compliance": [2, 4],
+    "residency": [1, 2],
+    "human-review": [1, 2]
+  }
+}

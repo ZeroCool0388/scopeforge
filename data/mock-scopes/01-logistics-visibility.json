@@ -1,0 +1,178 @@
+{
+  "title": "Consignment visibility, without the chase",
+  "summary": "A read-only visibility pilot that helps the service team identify and resolve shipment exceptions.",
+  "customer": "Northwind Logistics Ltd",
+  "sector": "Logistics",
+  "goals": [
+    "Reduce time spent reconciling consignment status across three systems.",
+    "Help service agents spot delayed or contradictory shipment updates sooner.",
+    "Give the sponsor evidence to decide whether wider automation is worthwhile."
+  ],
+  "inScope": [
+    "Read-only status ingestion from up to three agreed systems.",
+    "A reconciled consignment view with source timestamps and exception flags.",
+    "Draft exception messages for service-agent approval.",
+    "A pilot with one service team and an agreed shipment cohort."
+  ],
+  "outOfScope": [
+    "Replacing transport or warehouse management systems.",
+    "Autonomous customer messaging or changes to shipment instructions.",
+    "Predictive arrival guarantees or a full customer tracking portal.",
+    "Organisation-wide rollout and 24/7 managed operations."
+  ],
+  "assumptions": [
+    {
+      "text": "Three source systems expose usable read-only extracts or APIs.",
+      "confidence": "Low"
+    },
+    {
+      "text": "A service manager can nominate pilot users and a baseline.",
+      "confidence": "Medium"
+    },
+    {
+      "text": "The first pilot can operate without a new customer-facing portal.",
+      "confidence": "High"
+    }
+  ],
+  "questions": [
+    {
+      "group": "Commercial",
+      "question": "Who owns the budget, and what decision will a successful pilot unlock?",
+      "why": "Sets the pilot investment ceiling and avoids an unfunded rollout."
+    },
+    {
+      "group": "Technical",
+      "question": "Do all three systems share a reliable consignment identifier?",
+      "why": "Identity matching may dominate integration effort."
+    },
+    {
+      "group": "Operational",
+      "question": "Who approves exception messages, and how quickly?",
+      "why": "Human approval capacity determines the achievable response time."
+    },
+    {
+      "group": "Compliance",
+      "question": "What shipment or contact data can leave the source systems?",
+      "why": "Defines retention, hosting and redaction requirements."
+    }
+  ],
+  "phases": [
+    {
+      "name": "Discover",
+      "objective": "Confirm source access, consignment identity and the service-team baseline.",
+      "activities": [
+        "Interview the sponsor and nominated pilot users.",
+        "Profile approved sample data and identify access gaps.",
+        "Agree baseline measures, acceptance thresholds and a go/no-go gate."
+      ],
+      "exitCriteria": "Sponsor signs off the pilot boundary, data access and evaluation plan.",
+      "duration": {
+        "min": 1,
+        "max": 2
+      }
+    },
+    {
+      "name": "Design",
+      "objective": "Turn agreed outcomes and controls into a buildable pilot design.",
+      "activities": [
+        "Map the bounded workflow and reviewer responsibilities.",
+        "Define interfaces, failure handling and evidence requirements.",
+        "Review the design with the operational and compliance owners."
+      ],
+      "exitCriteria": "Design and required control owners approve the implementation plan.",
+      "duration": {
+        "min": 1,
+        "max": 2
+      }
+    },
+    {
+      "name": "Build",
+      "objective": "Implement source mapping, status reconciliation and an approval queue.",
+      "activities": [
+        "Implement only the agreed data inputs and workflow.",
+        "Add traceability, access controls and explicit failure states.",
+        "Evaluate representative and adversarial cases against the reference set."
+      ],
+      "exitCriteria": "The test cohort meets agreed quality thresholds; critical issues are resolved.",
+      "duration": {
+        "min": 2,
+        "max": 4
+      }
+    },
+    {
+      "name": "Pilot",
+      "objective": "Evaluate usefulness and reliability with the agreed user cohort.",
+      "activities": [
+        "Onboard pilot users and train reviewers.",
+        "Run a bounded trial against the baseline.",
+        "Capture errors, review effort and user feedback."
+      ],
+      "exitCriteria": "Sponsor reviews measured results and decides to stop, iterate or expand.",
+      "duration": {
+        "min": 2,
+        "max": 3
+      }
+    },
+    {
+      "name": "Handover",
+      "objective": "Give the owner a controlled, maintainable next step.",
+      "activities": [
+        "Document the workflow, limits and operational runbook.",
+        "Transfer configuration and review responsibilities.",
+        "Present the pilot findings and a separately scoped rollout option."
+      ],
+      "exitCriteria": "Named owner accepts the handover and the next-step decision is recorded.",
+      "duration": {
+        "min": 1,
+        "max": 1
+      }
+    }
+  ],
+  "effort": {
+    "size": "Medium",
+    "drivers": [
+      {
+        "id": "integrations",
+        "detail": "Up to 3 source systems; connectors and identifier mapping."
+      },
+      {
+        "id": "data-readiness",
+        "detail": "Identifier quality and timestamp consistency are unverified."
+      },
+      {
+        "id": "human-review",
+        "detail": "Service agents approve every draft exception message."
+      }
+    ],
+    "min": 10,
+    "max": 19
+  },
+  "risks": [
+    {
+      "risk": "Conflicting status updates undermine trust.",
+      "mitigation": "Display source and freshness; route conflicts to manual review."
+    },
+    {
+      "risk": "Drafts trigger the wrong action.",
+      "mitigation": "Keep all messages in an approval queue during the pilot."
+    },
+    {
+      "risk": "Integration access delays the quarter target.",
+      "mitigation": "Use approved sample extracts during discovery; gate build on access."
+    }
+  ],
+  "metrics": [
+    {
+      "metric": "Status lookup time",
+      "target": "Proposed: 40% reduction against a two-week baseline."
+    },
+    {
+      "metric": "Exception detection precision",
+      "target": "Proposed: at least 90% on the agreed labelled cohort."
+    },
+    {
+      "metric": "Draft usefulness",
+      "target": "Proposed: 70% accepted with only minor edits."
+    }
+  ]
+}

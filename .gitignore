@@ -1,0 +1,15 @@
+node_modules/
+.next/
+out/
+.env*
+!.env.example
+.vercel/
+*.tsbuildinfo
+playwright-report/
+test-results/
+.DS_Store
+# Preserve the supplied brief locally; it contains excluded real-world references.
+03-brief-to-scope-agent.md
+
+# Local generated concept; public docs use actual product screenshots.
+docs/design-concept.png

@@ -1,0 +1,30 @@
+[
+  {
+    "id": "01-logistics-visibility",
+    "sector": "Logistics",
+    "customer": "Northwind Logistics Ltd",
+    "teaser": "One view of consignments. Fewer exception chases.",
+    "filename": "01-logistics-visibility.md"
+  },
+  {
+    "id": "02-bioscience-qc",
+    "sector": "Bioscience",
+    "customer": "Apex BioLabs Ltd",
+    "teaser": "Flag batch-record anomalies. Keep reviewers in control.",
+    "filename": "02-bioscience-qc.md"
+  },
+  {
+    "id": "03-pharma-medical-info",
+    "sector": "Pharmaceuticals",
+    "customer": "Helix Pharma UK Ltd",
+    "teaser": "Draft from approved content. Make every claim traceable.",
+    "filename": "03-pharma-medical-info.md"
+  },
+  {
+    "id": "04-fintech-kpi-narrative",
+    "sector": "FinTech",
+    "customer": "Sterling FinTech Ltd",
+    "teaser": "QBR narratives from trusted numbers, not guesswork.",
+    "filename": "04-fintech-kpi-narrative.md"
+  }
+]

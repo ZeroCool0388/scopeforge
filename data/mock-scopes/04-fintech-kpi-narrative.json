@@ -1,0 +1,186 @@
+{
+  "title": "QBR narratives, grounded in data",
+  "summary": "Turn verified usage metrics into review-ready QBR narratives, with a CSM accountable for every customer-facing draft.",
+  "customer": "Sterling FinTech Ltd",
+  "sector": "FinTech",
+  "goals": [
+    "Reduce CSM preparation time while preserving account-specific judgement.",
+    "Ensure every numerical claim reconciles to a verified metric snapshot.",
+    "Prove the value and controls needed for a wider rollout."
+  ],
+  "inScope": [
+    "One agreed usage-data export and one QBR narrative template.",
+    "Drafts with metric references, period labels and missing-data flags.",
+    "SSO for pilot users and an approved deployment region.",
+    "A pilot with 5 CSMs and up to 10 fictional or approved test accounts."
+  ],
+  "outOfScope": [
+    "Autonomous customer delivery or CRM write-back.",
+    "Predictive revenue claims or invented benchmarks.",
+    "Replacing dashboards, rebuilding the data warehouse or all QBR templates.",
+    "Organisation-wide rollout, multilingual output and ongoing managed service."
+  ],
+  "assumptions": [
+    {
+      "text": "Usage exports contain stable account IDs and reporting periods.",
+      "confidence": "Low"
+    },
+    {
+      "text": "An identity owner can support the pilot SSO integration.",
+      "confidence": "Medium"
+    },
+    {
+      "text": "CSMs retain approval of every customer-facing narrative.",
+      "confidence": "High"
+    }
+  ],
+  "questions": [
+    {
+      "group": "Commercial",
+      "question": "What pilot budget and preparation-time saving would justify expansion?",
+      "why": "Sets an investment gate before committing to rollout."
+    },
+    {
+      "group": "Technical",
+      "question": "Which source is authoritative when the export and CRM disagree?",
+      "why": "Prevents contradictory numerical claims and defines reconciliation rules."
+    },
+    {
+      "group": "Operational",
+      "question": "Who approves the narrative template and reviews the first 10 drafts?",
+      "why": "Makes accountability and acceptance criteria explicit."
+    },
+    {
+      "group": "Compliance",
+      "question": "Which hosting region, retention period and model-processing terms are required?",
+      "why": "Data residency is a design constraint, not a post-build checkbox."
+    }
+  ],
+  "phases": [
+    {
+      "name": "Discover",
+      "objective": "Confirm authoritative metrics, account mapping, residency and the CSM baseline.",
+      "activities": [
+        "Interview the sponsor and nominated pilot users.",
+        "Profile approved sample data and identify access gaps.",
+        "Agree baseline measures, acceptance thresholds and a go/no-go gate."
+      ],
+      "exitCriteria": "Sponsor signs off the pilot boundary, data access and evaluation plan.",
+      "duration": {
+        "min": 1,
+        "max": 2
+      }
+    },
+    {
+      "name": "Design",
+      "objective": "Turn agreed outcomes and controls into a buildable pilot design.",
+      "activities": [
+        "Map the bounded workflow and reviewer responsibilities.",
+        "Define interfaces, failure handling and evidence requirements.",
+        "Review the design with the operational and compliance owners."
+      ],
+      "exitCriteria": "Design and required control owners approve the implementation plan.",
+      "duration": {
+        "min": 1,
+        "max": 2
+      }
+    },
+    {
+      "name": "Build",
+      "objective": "Build metric-grounded narratives, numerical checks, SSO and approval workflow.",
+      "activities": [
+        "Implement only the agreed data inputs and workflow.",
+        "Add traceability, access controls and explicit failure states.",
+        "Evaluate representative and adversarial cases against the reference set."
+      ],
+      "exitCriteria": "The test cohort meets agreed quality thresholds; critical issues are resolved.",
+      "duration": {
+        "min": 2,
+        "max": 4
+      }
+    },
+    {
+      "name": "Pilot",
+      "objective": "Evaluate usefulness and reliability with the agreed user cohort.",
+      "activities": [
+        "Onboard pilot users and train reviewers.",
+        "Run a bounded trial against the baseline.",
+        "Capture errors, review effort and user feedback."
+      ],
+      "exitCriteria": "Sponsor reviews measured results and decides to stop, iterate or expand.",
+      "duration": {
+        "min": 2,
+        "max": 3
+      }
+    },
+    {
+      "name": "Handover",
+      "objective": "Give the owner a controlled, maintainable next step.",
+      "activities": [
+        "Document the workflow, limits and operational runbook.",
+        "Transfer configuration and review responsibilities.",
+        "Present the pilot findings and a separately scoped rollout option."
+      ],
+      "exitCriteria": "Named owner accepts the handover and the next-step decision is recorded.",
+      "duration": {
+        "min": 1,
+        "max": 1
+      }
+    }
+  ],
+  "effort": {
+    "size": "Medium",
+    "drivers": [
+      {
+        "id": "integrations",
+        "detail": "One usage export and identity provider; no CRM write-back."
+      },
+      {
+        "id": "data-readiness",
+        "detail": "Metric definitions, periods and account matching need validation."
+      },
+      {
+        "id": "sso",
+        "detail": "SSO configuration and role access for the pilot cohort."
+      },
+      {
+        "id": "residency",
+        "detail": "Approved processing region and retention settings."
+      },
+      {
+        "id": "human-review",
+        "detail": "CSMs approve each narrative before customer use."
+      }
+    ],
+    "min": 12,
+    "max": 23
+  },
+  "risks": [
+    {
+      "risk": "The model invents or misstates a number.",
+      "mitigation": "Pass only verified metrics, validate numerical claims and block unsupported drafts."
+    },
+    {
+      "risk": "Inconsistent reporting periods distort the story.",
+      "mitigation": "Freeze a metric dictionary and flag incomparable or missing periods."
+    },
+    {
+      "risk": "Residency requirements constrain provider choice.",
+      "mitigation": "Confirm deployment and processing terms before selecting a live model."
+    }
+  ],
+  "metrics": [
+    {
+      "metric": "Preparation time",
+      "target": "Proposed: 50% reduction against a two-week baseline."
+    },
+    {
+      "metric": "Numerical accuracy",
+      "target": "Proposed: 100% of numerical claims reconcile to the supplied snapshot."
+    },
+    {
+      "metric": "CSM usefulness",
+      "target": "Proposed: 80% of drafts rated useful with minor edits."
+    }
+  ]
+}

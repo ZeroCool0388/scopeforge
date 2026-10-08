@@ -1,0 +1,179 @@
+{
+  "title": "A controlled pilot for Apex BioLabs",
+  "summary": "Establish a measurable, review-led pilot before making a wider delivery commitment. An assistive QC pilot that flags evidence-backed anomalies while qualified reviewers retain release authority.",
+  "customer": "Apex BioLabs Ltd",
+  "sector": "Bioscience",
+  "goals": [
+    "Demonstrate a measurable improvement in the agreed pilot workflow.",
+    "Identify predefined anomalies with traceable supporting evidence.",
+    "Establish whether assistive review is reliable enough for a controlled next step."
+  ],
+  "inScope": [
+    "Discovery-led confirmation of one batch-record type and a QA-approved retrospective cohort.",
+    "Document extraction and flags against agreed anomaly definitions.",
+    "Source-linked findings with reviewer disposition and an audit trail.",
+    "A shadow pilot with no effect on release decisions."
+  ],
+  "outOfScope": [
+    "Automated batch release, certification or quality decisions.",
+    "Replacing the laboratory system or quality management system.",
+    "Regulatory approval or claims of validated production use.",
+    "Unbounded anomaly detection across every assay and record type.",
+    "Additional data sources and workflows beyond the signed-off pilot boundary."
+  ],
+  "assumptions": [
+    {
+      "text": "Subject to discovery: A representative cohort includes known anomalies and clean records.",
+      "confidence": "Low"
+    },
+    {
+      "text": "QA will own anomaly definitions and reviewer acceptance criteria.",
+      "confidence": "Medium"
+    },
+    {
+      "text": "Retrospective records can be processed in an approved environment.",
+      "confidence": "Low"
+    }
+  ],
+  "questions": [
+    {
+      "group": "Commercial",
+      "question": "Who is the decision-maker for pilot funding, and when is the go/no-go review?",
+      "why": "Keeps the pilot tied to a named sponsor and a specific investment decision."
+    },
+    {
+      "group": "Technical",
+      "question": "How much of the cohort is scanned, and how legible are the records?",
+      "why": "Extraction quality determines feasibility before model tuning."
+    },
+    {
+      "group": "Operational",
+      "question": "Who labels anomalies and adjudicates disagreements?",
+      "why": "A qualified reference standard is essential for evaluation."
+    },
+    {
+      "group": "Compliance",
+      "question": "Which validation, audit and retention controls does QA require?",
+      "why": "Determines whether a shadow pilot is permissible and its evidence burden."
+    }
+  ],
+  "phases": [
+    {
+      "name": "Discover",
+      "objective": "Run a focused discovery workshop before committing the pilot build.",
+      "activities": [
+        "Interview the sponsor and nominated pilot users.",
+        "Profile approved sample data and identify access gaps.",
+        "Agree baseline measures, acceptance thresholds and a go/no-go gate."
+      ],
+      "exitCriteria": "Sponsor signs off the pilot boundary, data access and evaluation plan.",
+      "duration": {
+        "min": 1,
+        "max": 2
+      }
+    },
+    {
+      "name": "Design",
+      "objective": "Turn agreed outcomes and controls into a buildable pilot design.",
+      "activities": [
+        "Map the bounded workflow and reviewer responsibilities.",
+        "Define interfaces, failure handling and evidence requirements.",
+        "Review the design with the operational and compliance owners."
+      ],
+      "exitCriteria": "Design and required control owners approve the implementation plan.",
+      "duration": {
+        "min": 1,
+        "max": 2
+      }
+    },
+    {
+      "name": "Build",
+      "objective": "Build extraction, source-linked anomaly flags and reviewer dispositions.",
+      "activities": [
+        "Implement only the agreed data inputs and workflow.",
+        "Add traceability, access controls and explicit failure states.",
+        "Evaluate representative and adversarial cases against the reference set."
+      ],
+      "exitCriteria": "The test cohort meets agreed quality thresholds; critical issues are resolved.",
+      "duration": {
+        "min": 2,
+        "max": 4
+      }
+    },
+    {
+      "name": "Pilot",
+      "objective": "Evaluate usefulness and reliability with the agreed user cohort.",
+      "activities": [
+        "Onboard pilot users and train reviewers.",
+        "Run a bounded trial against the baseline.",
+        "Capture errors, review effort and user feedback."
+      ],
+      "exitCriteria": "Sponsor reviews measured results and decides to stop, iterate or expand.",
+      "duration": {
+        "min": 2,
+        "max": 3
+      }
+    },
+    {
+      "name": "Handover",
+      "objective": "Give the owner a controlled, maintainable next step.",
+      "activities": [
+        "Document the workflow, limits and operational runbook.",
+        "Transfer configuration and review responsibilities.",
+        "Present the pilot findings and a separately scoped rollout option."
+      ],
+      "exitCriteria": "Named owner accepts the handover and the next-step decision is recorded.",
+      "duration": {
+        "min": 1,
+        "max": 1
+      }
+    }
+  ],
+  "effort": {
+    "size": "Medium",
+    "drivers": [
+      {
+        "id": "data-readiness",
+        "detail": "Confirm during discovery: Scanned records and labelled evaluation data are unverified."
+      },
+      {
+        "id": "compliance",
+        "detail": "QA approval, traceability and agreed validation evidence."
+      },
+      {
+        "id": "human-review",
+        "detail": "Qualified reviewers own each finding and all release decisions."
+      }
+    ],
+    "min": 10,
+    "max": 19
+  },
+  "risks": [
+    {
+      "risk": "Missed anomalies create misplaced confidence.",
+      "mitigation": "Agree a stop condition with the sponsor. Shadow-only use; report false negatives by anomaly class."
+    },
+    {
+      "risk": "Poor extraction produces misleading flags.",
+      "mitigation": "Show source snippets and block low-quality records from automated review."
+    },
+    {
+      "risk": "A pilot is mistaken for validated production use.",
+      "mitigation": "Document intended use and require a separate production validation gate."
+    }
+  ],
+  "metrics": [
+    {
+      "metric": "Review effort",
+      "target": "Proposed: agree a baseline in discovery, then test a 30% improvement."
+    },
+    {
+      "metric": "Anomaly recall",
+      "target": "Proposed: at least 95% for agreed high-priority classes."
+    },
+    {
+      "metric": "Traceability",
+      "target": "Proposed: 100% of flags linked to a source location."
+    }
+  ]
+}
