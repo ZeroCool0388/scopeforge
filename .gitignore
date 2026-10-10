@@ -7,6 +7,7 @@ out/
 *.tsbuildinfo
 playwright-report/
 test-results/
+.promptfoo/
 .DS_Store
 # Preserve the supplied brief locally; it contains excluded real-world references.
 03-brief-to-scope-agent.md

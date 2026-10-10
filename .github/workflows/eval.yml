@@ -1,0 +1,24 @@
+name: Evals
+on:
+  push:
+  pull_request:
+jobs:
+  eval:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run eval
+        env:
+          OPENAI_API_KEY: ""
+          ANTHROPIC_API_KEY: ""
+          LLM_PROVIDER: ""
+          LLM_MODEL: ""
+          FORGE_ACCESS_TOKEN: ""
+          PROMPTFOO_DISABLE_TELEMETRY: "1"
+          PROMPTFOO_DISABLE_SHARING: "1"
+          PROMPTFOO_DISABLE_UPDATE: "1"
