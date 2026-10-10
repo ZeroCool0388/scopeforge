@@ -59,6 +59,7 @@ npm run start
 npm run lint
 npm run typecheck
 npm run test
+npm run eval
 npx playwright install chromium
 npm run test:e2e
 ```
@@ -114,6 +115,28 @@ flowchart LR
 The server owns provider access and data fixtures. The client owns edits, the proposal preview, Markdown exports and browser history. A server route renders PDF exports. Full generation and section regeneration share the same schema and effort engine. Regeneration returns a validated scope, but the client replaces only the requested fields, preserving edits made in other sections while the request was in flight.
 
 `lib/schema.ts` defines the contract, `lib/forge.ts` orchestrates generation, `lib/effort.ts` computes work ranges, and `lib/proposal.ts` projects customer-ready proposal content. PDF rendering happens on demand in a Node server route, avoiding browser-specific renderer limitations. There are no accounts, database, external connectors, emails or CRM writes.
+
+## Eval results
+
+Run the checked-in scope cases with:
+
+```bash
+npm run eval
+```
+
+The suite is promptfoo-style (`evals/promptfooconfig.json`) and is executed locally by `evals/run.ts`. A custom provider calls brief parsing, recorded scope fixtures, the heuristic draft, the effort model and the live-request gate. It does not call a model provider.
+
+Evals run in demo mode. Provider API keys are ignored, and a key in the environment blocks live generation instead of sending a request. Promptfoo telemetry and sharing are disabled. Pushes and pull requests run the same command in [`.github/workflows/eval.yml`](.github/workflows/eval.yml) with no secrets.
+
+A local `npm run eval` run passed **28/28** cases (pass rate 100.0%). The suite reported `suite_latency_ms: 38.6`, `model_calls: 0` and cost **£0**.
+
+## Cost and latency
+
+The eval suite made 0 model calls. Measured cost is £0. Measured suite latency is 38.6 ms. No other cost or latency figure is claimed.
+
+## Limits and next steps
+
+The suite covers deterministic demo behaviour on the fictional briefs and fixtures. It does not call a live model, and it does not measure hosted response time. Live generation stays off unless a provider key is configured outside this suite; the eval provider refuses that path. Product follow-ups are listed under Roadmap.
 
 ## How effort is estimated
 
